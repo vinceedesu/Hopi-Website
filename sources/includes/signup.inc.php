@@ -36,12 +36,16 @@ $sql = "INSERT INTO user (name, email, uid, password_hash)
         
 $stmt = $mysqli->stmt_init();
 
-if ( ! $stmt->prepare($sql)) {
-    die("SQL error: " . $mysqli->error);
+if(! $stmt->prepare($sql)){
+    die("SQL error: ". $mysqli->error);
 }
 
-$stmt->bind_param("sss",
-                  $_POST["name"],
-                  $_POST["email"],
-                  $_POST["uid"],
-                  $password_hash);
+$stmt->bind_param(
+    "ssss",
+    $_POST["name"],
+    $_POST["email"],
+    $password_hash,
+    $_POST["uid"]
+);
+
+echo "Signup successful";
