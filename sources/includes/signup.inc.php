@@ -4,7 +4,7 @@ if (empty($_POST["name"])) {
     die("Name is required");
 }
 if (empty($_POST["uid"])) {
-    die("Name is required");
+    die("Username is required");
 }
 
 if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
@@ -31,8 +31,8 @@ $password_hash = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/dbh-inc.php";
 
-$sql = "INSERT INTO user (name, email, password_hash)
-        VALUES (?, ?, ?)";
+$sql = "INSERT INTO user (name, email, uid, password_hash)
+        VALUES (?, ?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
 
