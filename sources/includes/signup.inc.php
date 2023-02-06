@@ -33,27 +33,16 @@ $sql = "INSERT INTO users (name, email,  password_hash)
         
 $stmt = $mysqli->stmt_init();
 
-if(! $stmt->prepare($sql)){
-    die("SQL error: ". $mysqli->error);
+if ( ! $stmt->prepare($sql)) {
+    die("SQL error: " . $mysqli->error);
 }
 
-$stmt->bind_param("sss",
+$stmt->bind_param(
+    "ssss",
     $_POST["name"],
     $_POST["email"],
-    $password_hash
+    $password_hash,
+    $_POST["uid"]
 );
 
-if ($stmt->execute()) {
-
-    header("Location: ../php/signup-success.php");
-    exit;
-
-} else {
-
-    if ($mysqli->errno === 1062) {
-        die("email already taken");
-    } else {
-        die($mysqli->error . " " . $mysqli->errno);
-    }
-
-}
+echo "Signup successful";
