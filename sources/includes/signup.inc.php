@@ -31,7 +31,7 @@ $password_hash = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/dbh-inc.php";
 
-$sql = "INSERT INTO users (name, email, uid, password_hash)
+$sql = "INSERT INTO users (name,uid, email,  password_hash)
         VALUES (?, ?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
@@ -42,9 +42,20 @@ if(! $stmt->prepare($sql)){
 
 $stmt->bind_param("ssss",
     $_POST["name"],
+    $_POST["uid"],
     $_POST["email"],
-    $password_hash,
-    $_POST["uid"]
+    $password_hash
 );
 
-echo "Signup successful";
+if ($stmt->execute()){
+
+    header("location: ../php/signup-success.php");
+    exit();
+
+}else{
+    if($mysqli->errno ===1062){
+        die("Email already taken");
+    }else{
+    die($mysqli->error . " " . $mysqli->errno);
+    }
+}
