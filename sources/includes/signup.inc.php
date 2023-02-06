@@ -31,7 +31,7 @@ $password_hash = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/dbh-inc.php";
 
-$sql = "INSERT INTO user (name, email, uid, password_hash)
+$sql = "INSERT INTO users (name, email, uid, password_hash)
         VALUES (?, ?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
@@ -40,8 +40,7 @@ if(! $stmt->prepare($sql)){
     die("SQL error: ". $mysqli->error);
 }
 
-$stmt->bind_param(
-    "ssss",
+$stmt->bind_param("ssss",
     $_POST["name"],
     $_POST["email"],
     $password_hash,
