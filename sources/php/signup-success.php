@@ -12,17 +12,11 @@
 
 <header>
     <div class="logo"><span>Hopi Crafts</span></div>
-    <div class="nav-links"> 
-        <ul>
-            <li><a href="../../index.php">Back</a></li>
-
-        </ul>
-    </div>
 </header>
   <div class="logIn">
       <div class="text-content">
-          <h1>Sign Up Success</h1>
-          <p>Go<a href="login.php">Login</a>.</p>
+          <h1>Sign Up</h1> <br>
+          Sign up successful. You can now <a href="login.php">Login</a> .
       </div>
       </div>
 </body>
