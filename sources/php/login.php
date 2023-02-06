@@ -22,7 +22,7 @@
   <div class="logIn">
       <div class="text-content">
           <h1>Log In</h1>
-          <p>Enter your username and password</p>
+          <p>Enter your email and password</p>
       </div>
       <form class="fill-up" action="../includes/signup.inc.php" method="post">
         <input type="text" id="username" name="username" placeholder="Username/Email">
@@ -31,7 +31,6 @@
         <br>
         <a href="sign-up.php">Sign Up</a>
         <button class="fillButton" type="submit" name="submit">Login</button>
-        <!-- <input type="button" name="submit" value="Sign In"> -->
       </form>
 </div>
 </body>

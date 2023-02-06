@@ -21,13 +21,11 @@
         <div class="logIn">
             <div class="text-content">
                 <h1>Sign Up</h1>
-                <p>Fill up the form wewe</p>
+                <p>Fill up the form</p>
             </div>
             <section class="signUp-form">
                 <form action="../includes/signup.inc.php" method="post" novalidate>
                 <input type="text" id="name" name="name" placeholder="Full Name...">
-                <br>
-                <input type="text" id="uid" name="uid" placeholder="Username...">
                 <br>
                 <input type="email" id="email" name="email" placeholder="Email...">
                 <br>
@@ -37,7 +35,6 @@
                 <br>
                 <button class="fillButton" type="submit" name="submit">Sign Up</button>
                 </form>
-
             <?php 
           
         ?>
