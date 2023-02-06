@@ -5,7 +5,7 @@ $dbname = "hopicraftdb";
 $username = "root";
 $password = "";
 
-$conn = new mysqli(hostname: $host,
+$mysqli = new mysqli(hostname: $host,
                      username: $username,
                      password: $password,
                      database: $dbname);
