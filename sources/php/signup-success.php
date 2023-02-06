@@ -22,7 +22,7 @@
   <div class="logIn">
       <div class="text-content">
           <h1>Sign Up Success</h1>
-          <p>Go</p>
+          <p>Go<a href="login.php">Login</a>.</p>
       </div>
       </div>
 </body>
