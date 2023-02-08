@@ -38,11 +38,11 @@ if ( ! $stmt->prepare($sql)) {
 }
 
 $stmt->bind_param(
-    "ssss",
+    "sss",
     $_POST["name"],
     $_POST["email"],
-    $password_hash,
-    $_POST["uid"]
+    $password_hash
 );
 
+$stmt->execute();
 echo "Signup successful";
