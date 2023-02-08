@@ -367,9 +367,12 @@ input[type=password]{
 
 /* Media Queries */
 
-@media only screen and (max-width:600px) {
-    .column{
-        flex: 100%;
+@media screen and (min-width:600px) {
+
+    h1{
+        font-size: 38px;
     }
-    
+    .carousel-img{
+        width: 40px;
+    }
 }
